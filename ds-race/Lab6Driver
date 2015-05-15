@@ -1,0 +1,79 @@
+import java.util.*;
+import java.lang.*:
+
+
+public Lab6Driver{
+	public static void main(String[] args){
+		  	Random random = new Random(123999123L);
+		  	public static final int NUMBER_OF_NUMBERS = 100000;;
+			public Long[] numbers = new Long[NUMBER_OF_NUMBERS];
+		  	public static final int NUMBER_OF_CHOICES;
+			public int[] choices  = new int[NUMBER_OF_CHOICES];
+
+			//Creating the data structures to be searched
+			long[] unsorted = new Long[NUMBER_OF_NUMBERS]; // copy of choices
+			long[] sorted;
+			BinarySearchTree<Long> bst;
+			BinarySearchTree<Long> bstBalanced;
+
+			//fill in numbers[] and unsorted[]
+			for(int i =0; i < NUMBER_OF_NUMBERS; i++){
+				numbers[i] = random.nextLong();
+				unsorted[i] = numbers[i];
+			}
+
+			//sort the unsorted[] array and assign to sort
+			sorted = sort(unsorted)
+
+			//fill choices[] array
+			for(int i = 0; i < NUMBER_OF_CHOICES; i++){
+				choices[i] = random.nextInt(NUMBER_OF_NUMBERS);
+			}
+
+			//fill in the bst and bstBalanced tree
+			for(int i = 0; i < NUMBER_OF_NUMBERS; i++){
+				bst.add(numbers[i]);
+				bstBalanced.add(numbers[i]);
+			}
+
+			//balance bstBalanced by calling the balance() method..
+
+
+		}
+	}
+
+
+	//sort method used to sort the unsorted array of Long numbers
+	public static void sort (Long[] array) {
+    	for (int i = 0; i < array.length-1; i++){
+      		for (int j = i+1; j < array.length; j++){
+        		if (array[i] > array[j]){
+           			Long t = array[i];
+           			array[i] = array[j];
+          			array[j] = t;
+        		}
+    		}
+  		}
+	}
+
+
+	public static void balance() {
+    	n = tree.reset(INORDER);
+    	for (int i=0; i<n; i++){
+      		array[i] = tree.getNext();
+      	}
+
+    	tree = new BinarySearchTree();
+   		tree.insertTree(0, n-1);
+   	}
+
+
+   	public static void insertTree(int lo, int hi) {
+	    if (lo <= hi) {
+	      mid = (lo+hi)/2;
+	      tree.add(array[mid]);
+	      tree.insertTree(lo, mid-1);
+	      tree.insertTree(mid+1, hi);
+	  	}
+	  }
+  }	
